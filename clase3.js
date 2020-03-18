@@ -1,3 +1,4 @@
+// Variables: Números
 var edad = 27
 
 // Incremento
