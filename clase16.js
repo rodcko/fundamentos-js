@@ -9,6 +9,7 @@ switch (signo) {
     case 'piscis':
         console.log('Horoscopo de piscis')
         break
+    // Se pueden agregar 2 posibles escenarios que ejecuten lo mismo
     case 'cancer':
     case 'cáncer':
         console.log('Horoscopo de cancer')
