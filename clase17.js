@@ -43,3 +43,4 @@ for (var i = 0; i < personas.length; i++) {
     var persona = personas[i]
     console.log(`${persona.nombre} mide ${persona.altura} mts`)
 }
+
