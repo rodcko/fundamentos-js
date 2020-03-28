@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 36 - Var, let y const: las diferencias entre ellos</title>
+</head>
+<body>
+    <script>
+    // Si declaramos mensajes con var: hoisting, conviene declararlas de manera global
+    // Let reduce el alcance de la variable, a donde es declarada y utilizada (dentro de una function por ejemplo) solo al bloque de codigo donde es utilizado
+    // Const trabaja de la misma forma que Let, pero no podemos volver a asignar la variable 
+    // En el caso que utilicemos const para arrays, no se puede reasignar, pero si lo podemos modificar, por ejemplo, agregando un nuevo elemento con el metodo push
+    var rodcko = {
+        nombre: 'Rodcko',
+        apellido: 'Haz',
+        edad: 28
+    }
+
+    function esMayorDeEdad(persona) {
+        if (persona.edad >= 18) {
+            var mensaje = 'Es mayor de edad'
+        } else {
+            var mensaje = 'Es menor de edad'
+        }
+        console.log(mensaje)
+    }
+
+    esMayorDeEdad(rodcko)
+
+    for (var i = 0; i < 10; i++) {
+        console.log(i) 
+    }
+
+    console.log(`Termino el for, el valor de i es ${i}`)
+    // En un for por ejemplo, podemos acceder al valor afuera del for de una variable, si se declaro como var, caso contrario si fuera con let, solo podemos acceder dentro del for a la misma
+    // La mejor practica seria utilizar let si vamos a reasignar la variable y const si no debe de cambiar, nos evitaremos muchos bugs
+    </script>
+    
+</body>
+</html>
