@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 43 - Punto y coma en Javascript</title>
+</head>
+<body>
+    <script>
+        // ¿Cuando hace falta poner el punto y coma al final de la línea?
+        // Punto y coma: si separamos 2 sentencias; declarar una variable, una cuenta, hacemos un llamado a una funcion, es 100% opcional
+        alet('hola') // No es necesario el punto y coma
+        var nombre = 'rodcko' // Igual no hace falta
+        const saludarRodcko = function () {  } // Tampoco hace falta
+        // Poner al final de una funcion, despues de las llaves, es 100% innecesario
+        // Es decir, después de un bloque de codigo
+
+        // Casos en los que si son obligatorios
+
+        console.log('Hola mi nombre es rodcko'); // En este caso si es necesario
+        [1, 2, 3].forEach(n => console.log(n * 2))
+
+        // Otro caso
+        console.log('Hola mi nombre es pepito'); // Aca también es necesario
+        `${nombre} es un desarrollador`
+
+        function calcularDoble(numero) {
+            return // Despues de return si hay un enter, es como si tuviera ;
+            { // Siempre tiene que comenzar en la misma linea del return
+                original: numero, doble: numero * 2 
+            }
+        }
+
+    </script>
+</body>
+</html>
