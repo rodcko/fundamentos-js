@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 42 - Cambiando de contexto al llamar una función</title>
+</head>
+<body>
+    <script>
+        // Cambiar el contexto de una funcion
+        const rodcko = {
+            nombre: 'rodcko',
+            apellido: 'haz',
+        }
+
+        const pepito = {
+            nombre: 'pepito',
+            apellido: 'abzum',
+        }
+
+
+
+        function saludar(saludo = 'Hola') {
+            console.log(`${saludo}, mi nombre es ${this.nombre}`)
+        }
+
+        // Cada funcion tiene su this atado a 2 objetos dinstintos
+        const saludarARodcko = saludar.bind(rodcko) // Nos devuelve una nueva funcion, atando el parametro que le pasamos al this dentro de esa funcion
+        const saludarAPepito = saludar.bind(pepito) // Nos devuelve una nueva funcion, atando el parametro que le pasamos al this dentro de esa funcion
+        // Dentro del bind podríamos mandar más parametros, el primero siempre es el contexto, y después podemos agregar más
+        setTimeout(saludar.bind(rodcko, 'Hola che'), 1000) // Aca devolvemos una nueva funcion atada a rodcko, pero no modifica la original de saludar
+
+        // Bind no ejecuta la funcion, sino nos retorna una nueva funcion, con el contexto cambiado
+
+        // Funcion call
+        saludar.call(rodcko, 'Hola che, ...') // Aca si la ejecuta en ese momento
+
+        // Funcion apply
+        saludar.apply(rodcko, ['Hola che']) // Muy similar al call, solo que el segundo parametro es un array, y dentro de el, agregamos si hubieran mas parametros
+
+        // NO HAY QUE PERDER DE VISTA CUANDO MANEJOS EL THIS, MENOS SI HACEMOS COSAS ASINCRONAS
+
+    </script>
+</body>
+</html>
