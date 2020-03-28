@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function diasEntreFechas(fecha1, fecha2) {
+            const unDia = 1000 * 60 * 60 * 24 // Transformacion de milisegundos en 1 día
+            const diferencia = Math.abs(fecha1 - fecha2) // Podemos restar o sumar las fechas
+            // Con Math.abs nos devuelve el valor absoluto, es decir si es negativo lo pasa a positivo y si es positivo se queda en positivo
+            // Lo que nos devuelve es un numero en milisegundos
+            
+            return Math.floor(diferencia / unDia)
+        }
+    
+        const hoy = new Date()
+        const nacimiento = new Date(1993, 3, 17) // Los meses inician desde 0 en javascript
+
+        
+
+    </script>
+</body>
+</html>
