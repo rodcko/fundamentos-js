@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 38 - Recursividad</title>
+</head>
+<body>
+    <script>
+        // Closure: es una funcion, que recuerda el estado de las cosas cuando fue invocada
+
+        function crearSaludo(finalDeFrase) { // Funcion generadora de otras funciones
+            return function (nombre) {
+                console.log(`Hola ${nombre} ${finalDeFrase}`) // Recuerda la variable que utilizo antes
+            } 
+        }
+
+        const saludoArgentino = crearSaludo('che')
+        const saludoMexicano = crearSaludo('guey')
+        const saludoColombiano = crearSaludo('amigo')
+
+        saludoArgentino('Rodcko') // Hola Rodcko che
+        saludoMexicano('Rodcko') // Hola Rodcko guey
+        saludoColombiano('Rodcko') // Hola Rodcko amigo
+
+
+    </script>
+</body>
+</html>
