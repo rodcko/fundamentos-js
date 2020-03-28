@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 38 - Recursividad</title>
+</head>
+<body>
+    <script>
+        // Estructuras de datos inmutables: nos permite deshacernos del efecto de lado, el cual son varios bugs
+        const rodcko = {
+            nombre: 'Rodcko',
+            apellido: 'Haz',
+            edad: 26
+        }
+
+        // El efecto de lado, llamamos una funcion  y esa modifica cosas por fuera de ellas, y queremos evitar eso, el efecto de lado
+        // const cumpleanos = persona => persona.edad++
+        const cumpInmutable = persona => ({ // Creamos una nueva estructura, creamos un nuevo objeto en memoria
+            ...persona, // Colocamos todos los atributos en el nuevo objeto
+            edad: persona.edad + 1 // Solo modifico la edad
+        }) // El objeto original no se va haber afectado por la funcion
+        // La desventaja es que tenemos que tener una nueva variable, para ir almacenando esos cambios... un rodckoViejo
+        // Nos va a permitir eliminar el efecto de lado, y programar de manera mas seguro y nos va a garantizar que no estemos contaminando mas nada 
+    </script>
+</body>
+</html>
