@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 38 - Recursividad</title>
+</head>
+<body>
+    <script>
+        // Memoización: ahorrando computo
+        // Podemos "cachear" resultados de operaciones costosas y con eso, ahorrarnos bastante procesamiento
+        // Guardar los resultados para evitar ser cuentas que ya hicimos
+
+        function factorial(n) {
+            if (!this.cache) {
+                this.cache = {} // Creamos una cache para guardar los resultados
+            }
+
+            debugger
+            if(this.cache[n]) {
+                return this.cache[n] // El calculo ya esta aca y lo retornamos
+            }
+
+            if (n === 1) {
+                return 1
+            }
+            // Va a ir acá cuando se ejecute el calculo por primera vez 
+            this.cache[n] = n * factorial(n - 1) // Aca guardamos el calculo
+            debugger
+            return this.cache[n] // Aca por si no existiera el calculo ya calculado
+        }
+
+    </script>
+</body>
+</html>
